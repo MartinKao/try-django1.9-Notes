@@ -1,0 +1,74 @@
+body {
+    background-color: rgba(0,120, 0,0.2);
+}
+
+a:link{text-decoration: none;color:white;}
+a:visited {text-decoration: none;color:#DDDDDD;}
+a:hover {text-decoration: none;color: rgba(20,200,200,0.9);}
+a:active {text-decoration: none;color: white;}
+
+p {
+    color: white;
+    padding-left: 20px;
+}
+
+.discription {
+    width: 90vw;
+    height: 80px;
+    margin: 0px auto;/*div置中*/
+    text-align: center;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 30px;
+    font-family: monospace;
+    font-size: 60px;
+    margin-top: 0px;
+}
+
+.catalog {
+    width: 60vw;
+    height: 80vh;
+    margin: 0px auto;
+    margin-top: 20px;
+    background-color: rgba(255,255,155,0.3);
+    border-radius: 10px;
+    padding-top: 20px;
+}
+
+.part1 {
+    width: 56vw;
+    margin: 0px auto;
+    margin-top: 0px;
+    background-color: rgba(105,55,0,0.6);
+    border-radius: 20px;
+    padding-top: 20px;
+}
+
+.lesson {
+    height: 40px;
+    font-size: 20px;
+    color: rgba(255,255,255,0.4);
+    margin-left: 20px;
+    font-family: serif;
+}
+
+.content {
+    width: 60vw;
+    height: 80vh;
+    margin: 0px auto;
+    margin-top: 20px;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    padding-top: 20px;
+}
+
+.link {
+    width: 20vw;
+    height: 30px;
+    margin: 0px auto;/*div置中*/
+    text-align: center;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 5px;
+    font-family: microsoft jhenghei;
+    font-size: 20px;
+    margin-top: 2px;
+}
