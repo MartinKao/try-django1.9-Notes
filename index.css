@@ -38,7 +38,7 @@ p {
     width: 56vw;
     margin: 0px auto;
     margin-top: 0px;
-    background-color: rgba(105,55,0,0.6);
+    background-color: rgba(105,55,0,0.2);
     border-radius: 20px;
     padding-top: 20px;
 }
@@ -59,16 +59,17 @@ p {
     background-color: rgba(0,0,0,0.6);
     border-radius: 10px;
     padding-top: 20px;
+    font-family: Microsoft JhengHei;
 }
 
 .link {
-    width: 20vw;
+    width: 8vw;
     height: 30px;
-    margin: 0px auto;/*div置中*/
+    margin: 0px auto;
     text-align: center;
     background-color: rgba(0,0,0,0.8);
     border-radius: 5px;
-    font-family: microsoft jhenghei;
+    font-family: Microsoft JhengHei;
     font-size: 20px;
     margin-top: 2px;
 }
