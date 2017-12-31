@@ -7,11 +7,14 @@ a:visited {text-decoration: none;color:#DDDDDD;}
 a:hover {text-decoration: none;color: rgba(20,200,200,0.9);}
 a:active {text-decoration: none;color: white;}
 
-p {
+p,ol {
     color: white;
     padding-left: 20px;
 }
-
+ol {
+    padding-left: 60px;
+    line-height: 30px;
+}
 .discription {
     width: 90vw;
     height: 80px;
