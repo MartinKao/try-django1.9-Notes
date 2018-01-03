@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Django 1.9 notes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="discription">
+        First App and Model
+    </div>
+    <script>ChangeDiscriptionFontSize()</script>
+    <div class="content">
+        <p>「app」是指構成網站運作的各個部分。</p>
+        <p>輸入「python manage.py startapp posts」啟動一個名為 posts 的 app 負責處理相關事務。posts 是一個資料夾，內含相關檔案。</p>
+        <p>在 posts 資料夾裡面找到 models.py 寫入想要的 class。</p>
+        <p>python2 在 class 裡面需要執行「def __unicode__(self):」，而 python3 則是「def __str__(self):」</p>
+        <p>app 完成之後，需要到隔壁 tryjango19 的 settings.py 的 INSTALL_APPS[] 加入剛才的app名稱: posts。</p>
+        <P>「CharField()」一定要定義 max_length ，否則會 migrate 失敗。</P>
+        <p>製作好 app 之後，執行「python manage.py makemigrations」製作可用來 migrate 的程式碼。</p>
+        <p>接著「python manage.py migrate」將程式碼正式加入資料庫以供使用。</p>
+    </div>
+
+    <div class="link"><a href="index.html">回首頁</a></div>
+</body>
+</html>
