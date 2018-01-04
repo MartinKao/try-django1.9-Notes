@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Django 1.9 notes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="discription">
+        Customize Admin
+    </div>
+    <script>ChangeDiscriptionFontSize()</script>
+    <div class="content">
+        <p>想要更多的功能請參考這個 <a href="https://docs.djangoproject.com/en/1.9/ref/contrib/admin/#modeladmin-options">reference</a>。</p>
+        <p>「list_display = ["title","updated","timestamp"]」設定要顯示在 admin 畫面的變數。</p>
+        <p>「list_display_links = ["updated"]」設定有哪些變數在畫面上具有連結到 post 的功能。</p>
+        <p>「list_filter = ["updated","timestamp"]」設定有哪些變數可以做為排序的依據。</p>
+        <p>「search_fields = ["title","content"]」設定有哪些變數內容可以被搜尋。</p>
+        <p>「list_editable = ["title"]」設定在 Post list 畫面中哪些參數可以直接被編輯。不過該參數不能同時設定 links 功能。</p>
+        <p>以上功能會被實作在 admin.py 作為一個 class，「class PostModelAdmin(admin.ModelAdmin):」。</p>
+        <p>如果這個 class 適用在 Post class 的管理的話，class 內部要加上一段「class Meta: model = Post」註明是給 Post 用的。</p>
+    </div>
+
+    <div class="link"><a href="index.html">回首頁</a></div>
+</body>
+</html>
