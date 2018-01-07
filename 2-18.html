@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Django 1.9 notes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="discription">
+        In App URLs
+    </div>
+    <script>ChangeDiscriptionFontSize()</script>
+    <div class="content">
+        <p>在自製的 app 「post」資料夾裡新增一個 urls.py 的檔案。內容複製 tryjango19 的 urls.py。</p>
+        <p>tryjango19 的 urls.py 需要多一行「from django.conf.urls import include」，才能使用 posts 的 urls.py。</p>
+        <p>原本那行網址路徑程式碼此時可以寫成「url(r'^posts/', include("posts.urls"))」，去掉「＄」，並能使用 posts 的 urls.py 儲存的路徑。</p>
+        <p>posts 的 urls.py 儲存的路徑要「from . import views」才能設定 views 裡寫好的 function。</p>
+        <p>接著設定 CRUL 各自的連結。</p>
+    </div>
+
+    <div class="link"><a href="index.html">回首頁</a></div>
+</body>
+</html>
