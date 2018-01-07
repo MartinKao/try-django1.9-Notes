@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Django 1.9 notes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="discription">
+        Django Templetes
+    </div>
+    <script>ChangeDiscriptionFontSize()</script>
+    <div class="content">
+        <p>在 settings.py 找到 TEMPLETES，並設定路徑路徑 DIRS 為「os.path.join(BASE_DIR, 'templetes')」。</p>
+        <p>而我們則在 src 資料夾內建立新資料夾叫做 templetes 以儲存想要的 templetes。</p>
+        <p>連結至 templetes 的內容必須在 views.py 寫的 request function 內，「return render(request, "index.html", {})」。這代表連結至 templetes 資料夾內的 index.html 檔。</p>
+        <p>下一步驟是編寫 templetes 內容。</p>
+    </div>
+
+    <div class="link"><a href="index.html">回首頁</a></div>
+</body>
+</html>
