@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Django 1.9 notes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="discription">
+        Template Context
+    </div>
+    <script>ChangeDiscriptionFontSize()</script>
+    <div class="content">
+        <p>上一篇只是單純地顯示 html 內容，這次將改動「render(request, "index.html", {})」其中的「{}」部分。</p>
+        <p>先製造變數「context = {}」，然後「render(request, "index.html", context)」。</p>
+        <p>context 是一個 dictionary 值，有很多可以設定的地方。例如「"title" : "aaa"」，就能在目標檔案 index.html 的「{{ title }}」這個地方以 "aaa" 做取代。</p>
+        <p>在 sublime text 中，同時編輯多行程式先選取目標行然後「command + shift + L」就可以同時編輯了。</p>
+    </div>
+
+    <div class="link"><a href="index.html">回首頁</a></div>
+</body>
+</html>
