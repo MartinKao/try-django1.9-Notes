@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Django 1.9 notes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="discription">
+        QuerySet Basics
+    </div>
+    <script>ChangeDiscriptionFontSize()</script>
+    <div class="content">
+        <p>要進入 query 模式，執行「python manage.py shell」。</p>
+        <p>如果要對 Post 這個 class 的物件進行操作，就先「from posts.models import Post」。</p>
+        <p>「Post.objects.all()」會回傳所有 Post 物件。</p>
+        <p>「Post.objects.filter(title="abc")」會回傳 title 變數是 "abc" 的物件。</p>
+        <p>「Post.objects.filter(title__icontains="abc")」會回傳 title 變數有包含到字串 "abc" 的物件。</p>
+        <p>「Post.objects.create(title="xxx",content="xxx",...)」就可以在資料庫中創造物件。</p>
+        <br><br>
+        <p>以上的操作也能在 views 進行。</p>
+        <p>在 posts 的 views.py 「from .models import Post」。</p>
+        <p>創造一個變數「queryset = Post.objects.all()」，在會在 html檔做字串取代的 context (dictionary變數)中創造新的 key：「"object_list": queryset」。
+            之後就能在 html 端使用 object_list。</p> 
+        </p>
+        <p>在html端，如果要使用到 for loop，形式是「{% for obj in object_list %}」，尾端要以「{% endfor %}」做結尾。</p>
+    </div>
+
+    <div class="link"><a href="index.html">回首頁</a></div>
+</body>
+</html>
