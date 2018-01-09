@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Django 1.9 notes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="discription">
+        Dynamic URL Routing and Patterns
+    </div>
+    <script>ChangeDiscriptionFontSize()</script>
+    <div class="content">
+        <P>在 urls.py 可以設定網址列連結的形式，同時 views.py 的對應 function 也要做出接收參數的更動。</P>
+        <p>如果做出此改變「url(r'^detail/(?P&lt;id&gt;\d+)/$', post_detail)」則對應函數必須變成「def post_detail(request, id=None):」。</p>
+        <p>網址列的其他寫法可以在作者的 <a href="https://github.com/codingforentrepreneurs/Guides/blob/master/all/common_url_regex.md">
+            Common Regular Expressions for Django URLs</a> 中找到。</p>
+    </div>
+
+    <div class="link"><a href="index.html">回首頁</a></div>
+</body>
+</html>
