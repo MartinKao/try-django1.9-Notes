@@ -73,6 +73,8 @@ ol {
     border-radius: 10px;
     padding-top: 20px;
     font-family: Microsoft JhengHei;
+    line-height: 25px;
+    overflow: scroll;
 }
 
 .link {

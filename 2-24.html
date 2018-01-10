@@ -12,7 +12,28 @@
     </div>
     <script>ChangeDiscriptionFontSize()</script>
     <div class="content">
-        <P>
+        <p>做 url 連結的方法有很多種，一種是直接指定，或是：</p><br>
+        <p>如果我們要在 index.html(detail) 替 title 做連結，先在 urls.py 替要用來作為連結的 url 取名<br>
+            「url(r'^detail/(?P&lt;id&gt;\d+)/$', post_detail, name="detail")」。<br>
+            然後在 index.html 修改成<br>
+            「&lt;a href='{% url "detail" id=obj.id %}'&gt;{{ obj.title }}&lt;/a&gt;」。<br>
+            <br>
+        <p>另一種方法是在 Post 這個 class 裡製作一個取得 url 的 function。首先一樣要替 url 取名，然後，<br>
+            「from django.core.urlresolvers import reverse」，在 class 裡面則是<br>
+            「def get_absolute_url(self):<br>
+            &emsp;&emsp;return reverse("detail", kwargs={"id": self.id})」。index.html 的連結寫法則是：<br>
+            「&lt;a href='{{ obj.get_absolute_url }}'&gt;{{ obj.title }}&lt;/a&gt;」。<br>
+            <br>
+        <p>不同的 class 間可能會有相同或類似的url名稱出現。現在只有 post 還無法察覺。可以為 post 創一個 namespace，
+            在專案 tryjango19 的 urls.py 的 urlpatterns 修改：<br>
+            「url(r'^posts/', include("posts.urls", namespace='posts')),」。<br>
+            設定好 namespace 之後，以上兩種 url 形式都會有小小改變，</p>
+        <p>
+            第一種會變成<br>
+            「&lt;a href='{% url "posts:detail" id=obj.id %}'&gt;{{ obj.title }}&lt;/a&gt;」。<br>
+            第二種會變成<br>
+            「def get_absolute_url(self):<br>
+            &emsp;&emsp;return reverse("posts:detail", kwargs={"id": self.id})」。</p>
     </div>
 
     <div class="link"><a href="index.html">回首頁</a></div>
