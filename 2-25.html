@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Django 1.9 notes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="discription">
+        Model Form and Create View
+    </div>
+    <script>ChangeDiscriptionFontSize()</script>
+    <div class="content">
+        <p>可以設計表單形式，並儲存內容到資料庫。</p>
+        <p>首先創造 forms.py 用來儲存我們設計的表單 class：</p>
+        <p> from django import forms<br>
+            from .models import Post<br>
+            <br>
+            &emsp;&emsp;class PostForm(forms.ModelForm):<br>
+	            &emsp;&emsp;&emsp;&emsp;class Meta:<br>
+		            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;model = Post<br>
+		            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;fields = [<br>
+			            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"title",<br>
+			            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"content"<br>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;]</p>
+        <p>在 views.py 改寫 create 的 view function：</p>
+        <p> def post_create(request):<br>
+	            &emsp;&emsp;form = PostForm(request.POST or None)<br>
+	            &emsp;&emsp;if form.is_valid():<br>
+		            &emsp;&emsp;&emsp;&emsp;instance = form.save(commit=False)<br>
+		            &emsp;&emsp;&emsp;&emsp;instance.save()<br>
+                <br>
+	            &emsp;&emsp;context = {<br>
+		            &emsp;&emsp;&emsp;&emsp;"form" : form,<br>
+	            &emsp;&emsp;}<br>
+                &emsp;&emsp;return render(request, "post_form.html", context)</p>
+        <p>post_form.html 是表單頁面：</p>
+        <p> &lt;form method='POST' action=''&gt;{% csrf_token %}<br>
+		        &emsp;&emsp;{{ form.as_p }}<br>
+		        &emsp;&emsp;&lt;input type='submit' value='Create Post ^^'/&gt;<br>
+            &lt;/form&gt;</p>
+        <p>「{% csrf_token %}」是內建的資安措施，防止外部擅自執行 create。</p>
+    </div>
+
+    <div class="link"><a href="index.html">回首頁</a></div>
+</body>
+</html>
