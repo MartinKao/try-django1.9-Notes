@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Django 1.9 notes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="discription">
+        Instance Update View
+    </div>
+    <script>ChangeDiscriptionFontSize()</script>
+    <div class="content">
+        <p>update 完之後，停留在原本頁面很奇怪，跳到更新完的 post 頁面才正常。<br>
+            「from django.http import HttpResponseRedirect」可以達到我們的目的。</p>
+        <p>基本上 post_update 就是由 post_create 加上 post_detail 構成的。</p>
+        <p> def post_update(request, id=None):<br>
+	            &emsp;&emsp;instance = get_object_or_404(Post,id=id)<br>
+	            &emsp;&emsp;form = PostForm(request.POST or None, instance=instance)<br>
+	            &emsp;&emsp;if form.is_valid():<br>
+		            &emsp;&emsp;&emsp;&emsp;instance = form.save(commit=False)<br>
+		            &emsp;&emsp;&emsp;&emsp;instance.save()<br>
+		            &emsp;&emsp;&emsp;&emsp;return HttpResponseRedirect(instance.get_absolute_url())<br>
+	            &emsp;&emsp;context = {<br>
+		            &emsp;&emsp;&emsp;&emsp;"title" : instance.title,<br>
+		            &emsp;&emsp;&emsp;&emsp;"instance" : instance,<br>
+		            &emsp;&emsp;&emsp;&emsp;"form" : form,<br>
+	            &emsp;&emsp;}<br>
+	            &emsp;&emsp;return render(request, "post_form.html", context)</p>
+    </div>
+    <div class="link"><a href="index.html">回首頁</a></div>
+</body>
+</html>
