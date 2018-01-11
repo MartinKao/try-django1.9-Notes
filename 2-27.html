@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Django 1.9 notes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="discription">
+        Django Messages Framework
+    </div>
+    <script>ChangeDiscriptionFontSize()</script>
+    <div class="content">
+        <p>為了在編輯或是新增貼文後跳出訊息，需要「from django.contrib import messages」。</p>
+        <p>在適當的地方加入：<br>
+            「messages.success(request, "Successfully created ~~~")」或是<br>
+            「messages.error(request, "Not successfully created ~~~")」或是<br>
+            「messages.success(request, "&lt;a href='xxx'&gt;Item&lt;/a&gt; Saved ~~~",extra_tags='html_safe')」。</p>
+        <p>另外在編輯或新增完後會跳到該項目的頁面，所以頁面的 html 檔(post_detail)也要編寫以顯示設定的 messages。</p>
+        <p> {% if messages %}<br>
+            &lt;ul class="messages"&gt;<br>
+	            &emsp;&emsp;{% for message in messages %}<br>
+                &emsp;&emsp;&lt;li{% if message.tags %} class="{{ message.tags }}"{% endif %}&gt;
+                    {% if "html_safe" in message.tags %}{{ message|safe}}
+                    {% else %}{{ message }}{% endif %}&lt;/li&gt;<br>
+	            &emsp;&emsp;{% endfor %}<br>
+            &lt;/ul&gt;<br>
+            {% endif %}</p>
+    </div>
+    <div class="link"><a href="index.html">回首頁</a></div>
+</body>
+</html>
