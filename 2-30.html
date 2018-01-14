@@ -12,7 +12,23 @@
     </div>
     <script>ChangeDiscriptionFontSize()</script>
     <div class="content">
-        <p>
+        <p>關於 static file 可以查看：<a href="https://docs.djangoproject.com/en/2.0/howto/static-files/" target="_blank">
+            Managing static files</a>。</p>
+        <p>在 urls.py 新增：<br>
+            &emsp;&emsp;「from django.conf import settings」<br>
+            &emsp;&emsp;「from django.conf.urls.static import static」<br>
+            以及設定 settings.DEBUG。</p>
+        <p>在 settings.py 新增兩個設定：「STATICFILE_DIRS」「STATIC_ROOT」。</p>
+        <p>在虛擬環境新增資料夾「static_cdn」，在 src 新增資料夾「static」。</p>
+        <p>以上設定完成後，執行「python manage.py collectstatic」，static_cdn 裡的環境就會被設定好。</p>
+        <p>在 static 資料夾裡建立 css 資料夾，新增 base.css 檔案。</p>
+        <p>當 static 資料夾做出變動，就要執行「python manage.py collectstatic」，使得 static_cdn 的環境更新。</p>
+        <p>base.html 需要引用 css檔「&lt;link rel='stylesheet' href='/static/css/base.css' /&gt;」。</p>
+        <p>新增設定「MEDIA_ROOT」以及 media_cdn ，儲存使用者上傳資料。</p>
+        <p>上面的路徑是寫死的，加入<br>
+            &emsp;&emsp;「{% load staticfiles %}」以及修改<br>
+            &emsp;&emsp;「&lt;link rel='stylesheet' href='{% static "css/base.css" %}' /&gt;」，<br>
+            就可以變更 STATIC_URL 的名稱而不影響實際位置。</p>
     </div>
     <div class="link"><a href="index.html">回首頁</a></div>
 </body>
