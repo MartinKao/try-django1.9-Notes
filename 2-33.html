@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Django 1.9 notes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="discription">
+        File Uploads with FileField and ImageField
+    </div>
+    <script>ChangeDiscriptionFontSize()</script>
+    <div class="content">
+        <p>在 Post 這個 class 加入「image = models.FileField(null=True, blank=True)」。</p>
+        <p>每次對 model 修改，都要執行「python manage.py makemigrations」然後「migrate」。</p>
+        <p>修改 urls.py 以及 settings.py，加入 MEDIA 相關的連結。</p>
+        <p>在 migrations 資料夾的 forms.py 加入 image 變數。</p>
+        <p>修改 post_form.html 以接收圖片檔案。</p>
+        <p>修改 post_list.html 和 post_detail.html 以顯示圖片。</p>
+        <p>修改 views.py 裡會接收 image 的 function。</p>
+        <p>要改為 ImageField 需要「pip install pillow」。</p>
+    </div>
+    <div class="link"><a href="index.html">回首頁</a></div>
+</body>
+</html>
