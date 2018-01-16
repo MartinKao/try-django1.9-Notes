@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Django 1.9 notes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="discription">
+        SlugField
+    </div>
+    <script>ChangeDiscriptionFontSize()</script>
+    <div class="content">
+        <p>slug 是用來改良網址列的。</p>
+        <p>在 class Post 加入「slug = models.SlugField(unique=True)」</p>
+        <p>由於要修改網址列，先刪掉現有的 media 以及整個資料庫，和 migrations 的內容。</p>
+        <p>重新執行以下步驟：<br>
+            <ol>
+           &emsp;&emsp; <li>「python manage.py migrate」</li>
+           &emsp;&emsp; <li>「python manage.py makemigrations」</li>
+           &emsp;&emsp; <li>「python manage.py migrate」</li>
+           &emsp;&emsp; <li>「python manage.py createsuperuser」</li>
+            </ol>
+        <p>然後修改所有會用到連結的相關設定。主要是修改 models.py，其餘會有微調。</p>
+        <p>models.py 需要：<br>
+            &emsp;&emsp;「from django.db.models.signals import pre_save」。<br>
+            &emsp;&emsp;「from django.utils.text import slugify」。<br>
+            &emsp;&emsp;「def create_slug(instance, new_slug=None):」。<br>
+            &emsp;&emsp;「def pre_save_post_receiver(sender, instance, *args, **kwargs):」。<br>
+            &emsp;&emsp;「pre_save.connect(pre_save_post_receiver, sender=Post)」。<br>
+    </div>
+    <div class="link"><a href="index.html">回首頁</a></div>
+</body>
+</html>
