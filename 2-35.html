@@ -12,7 +12,14 @@
     </div>
     <script>ChangeDiscriptionFontSize()</script>
     <div class="content">
-        <p>
+        <p>使用 社群分享，參考此 <a href="https://github.com/codingforentrepreneurs/Guides/blob/master/all/social_share_links.md">
+            Social Sharing with Anchor Tags</a> 頁面。</p>
+        <p>套用模組之後，將連結的 url 部分替換成「{{ request.build_absolute_uri }}」。</p>
+        <p>為了保密網址列的字串內容，修改 view.py：<br>
+            &emsp;&emsp;「from urllib.parse import quote_plus」</p>
+        <p>修改 post_detail ( )：<br>
+            &emsp;&emsp;「share_string = quote_plus(instance.content)」</p>
+        <p>在 url 字串對部分字串以「{{ share_string }}」做取代。</p>
     </div>
     <div class="link"><a href="index.html">回首頁</a></div>
 </body>
