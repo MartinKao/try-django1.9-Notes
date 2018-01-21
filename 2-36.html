@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Django 1.9 notes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="discription">
+        Custom Template Tags
+    </div>
+    <script>ChangeDiscriptionFontSize()</script>
+    <div class="content">
+        <p>另外設計一個 function，單獨存在，而非放在 views.py 裡。</p>
+        <p>設計過程：<br>
+            <ol>
+                <li>建立資料夾 templatetags，位於 posts 資料夾。</li>
+                <li>在資料夾裡建立空的 __init__.py。</li>
+                <li>在資料夾裡建立 urlify.py，裡面寫 template filter。</li>
+                <li>在用到該 function 的 html檔 {{% load urlify %}}</li>
+            </ol>
+    </div>
+    <div class="link"><a href="index.html">回首頁</a></div>
+</body>
+</html>
