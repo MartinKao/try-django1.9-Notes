@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Django 1.9 notes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="discription">
+        Item Publish Data and Draft
+    </div>
+    <script>ChangeDiscriptionFontSize()</script>
+    <div class="content">
+        <p>draft 是草案的意思。</p>
+        <p>替 Post class 新增兩項屬性 draft 和 publish。</p>
+        <p>由於修改 model，再次 make migrations and migrate。</p>
+        <p>出現錯誤訊息，publish 需要一個 default value，於是在終端機設定為 timezone.now()。</p>
+        <p>之後修改 forms.py 新增這兩項。</p>
+        <p>設計 post_detail 和 post_list 使得這兩項屬性有所用處。</p>
+    </div>
+    <div class="link"><a href="index.html">回首頁</a></div>
+</body>
+</html>
