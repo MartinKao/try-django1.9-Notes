@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Django 1.9 notes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="discription">
+        Model Managers and Handling Drafts
+    </div>
+    <script>ChangeDiscriptionFontSize()</script>
+    <div class="content">
+        <p>如果要在 list 中不顯示 draft 文章，就加上 filter。</p>
+        <p>由於 draft 的發表時間在未來，所以可以用以下方法過濾：<br>
+            &emsp;&emsp;「queryset_list = Post.objects.filter(publish__lte=timezone.now())」。<br>
+            要「from django.utils import timezone」才能使用。</p>
+        <p>如果是過濾掉所有 draft，就用雙重 filter，加上「.filter(draft=False)」。</p>
+        <p>如果不想修改 views，可以修改 models。</p>
+        <p>在 models.py 新增一個 class，並在其中重新定義「all()」這個管理用函數。</p>
+        <p>並在 Post class 使用它「」。</p>
+        <p>由於在 views.py 的寫法是「Post.objects.all()」，所以變數名稱是用 objects，可同時更改。</p>
+        <br>
+        <p>不過這樣改之後，就無法編輯及點進去，因為預設的 all() 被修改成只有不是 draft 才是 Post。</p>
+        <p>將 all() 改名成 active() 之類的別的名稱，才不會出現這個問題。</p>
+        <p>但是一般使用者輸入 draft 的網址後，一樣看得到 draft，所以要改成不是管理者看不到 draft。</p>
+        <p>list 的部分，管理者可以看到全部的文章，不管是不是 draft，用同個方法設計。</p>
+    </div>
+    <div class="link"><a href="index.html">回首頁</a></div>
+</body>
+</html>
