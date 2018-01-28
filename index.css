@@ -56,6 +56,15 @@ ol {
     padding-top: 20px;
 }
 
+.part3 {
+    width: 56vw;
+    margin: 0px auto;
+    margin-top: 20px;
+    background-color: rgba(55,25,160,0.2);
+    border-radius: 20px;
+    padding-top: 20px;
+}
+
 .lesson {
     height: 40px;
     font-size: 20px;
