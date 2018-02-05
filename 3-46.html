@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Django 1.9 notes</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="discription">
+        Render HTML and Markdown
+    </div>
+    <script>ChangeDiscriptionFontSize()</script>
+    <div class="content">
+        <p>以前的 content 都是純文字，要有 html render 效果的話，要把 linebreak 改成 safe。</p>
+        <p>但是 html 語法太耗時，用另一套 render system 叫 markdown。</p>
+        <p>要在 base.html 引用 jquery 和 markdown 的 cdn。</p>
+        <p>在要 render 的地方的 class 多加個 content-markdown，並在 base.html 實作 jquery function。</p>
+    </div>
+    <div class="link"><a href="index.html">回首頁</a></div>
+</body>
+</html>
